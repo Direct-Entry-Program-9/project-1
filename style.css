@@ -179,4 +179,40 @@ h6{
 
 .sub-menu ul{
     display: none;
+    background-color: white;
+    border-top: 1px solid var(--layout-border-color);
+    border-right: 1px solid var(--layout-border-color);
+    min-width: 230px;
+    box-shadow: 3px 3px 6px 1px #00000059;
+}
+
+ul>.sub-menu:nth-child(2) ul{
+    width: 370px;
+}
+
+.sub-menu{
+    position: relative;
+}
+
+.sub-menu:hover::after{
+    border-left-color: red;
+}
+
+.sub-menu::after{
+    display: block;
+    content: "";
+    border-left: 5px solid black;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sub-menu:hover>ul{
+    display: block;
+    position: absolute;
+    left: calc(100% + 1px);
+    top: 0;
 }
